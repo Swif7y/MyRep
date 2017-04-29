@@ -123,3 +123,56 @@ public:
 
 
 };
+
+class Cars
+{
+private:
+	vector<CAuto>cars;
+public:
+	const vector<CAuto>& getCars()const
+	{
+		return cars;
+	}
+	Cars()// Подразбиращ конструктор
+	{
+	}
+	Cars(vector<CAuto>&c)//Експлицитен конструктор
+	{
+		cars = c;
+	}
+
+	Cars(const Cars& c)//Копиращ конструктор
+	{
+
+		cars = c.cars;
+	}
+	void Output(ostream& toStream)// Функция за извеждане на информацията
+	{
+
+		for (int i = 0; i <cars.size(); i++)
+		{
+			cars[i].print(toStream);
+		}
+	}
+	friend ostream& operator<<(ostream& toStream, Cars& c)// Оператор за извеждане
+	{
+		c.Output(toStream);
+		return toStream;
+	}
+	void CreateNew(Cars & c)//Функция за създавене на обект чрез друг обект
+	{
+		c.cars = cars;
+	}
+	friend istream& operator >> (istream& fromStream, Cars& c)//оператор за въвеждане
+	{
+		c.cars.clear();
+		CAuto a;
+		for (int i = 0; i < 6; i++)
+		{
+			fromStream >> a;
+			c.cars.push_back(a);
+		}
+		return fromStream;
+	}
+
+};
