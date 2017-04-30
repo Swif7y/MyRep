@@ -273,3 +273,34 @@ void Bez_LADA_DACIA(string marka1, string marka2, vector<CAutopark>cars)//функци
 		}
 	}
 }
+
+void Max_SALES(vector<CAutopark>cars)// Функция за най-много продажби
+{
+	int max = 0;//Променлива която съхранява продажбите
+	CAutopark s;//tuka prisvoqvame firmata 
+	for (vector<CAutopark>::iterator iter = cars.begin(); iter != cars.end(); iter++)//Обикаля фирмите
+	{
+		if (iter->getSells()>max)//Проверява максималните продажби
+		{
+			max = iter->getSells();// Присвоява максимална продажба ако числото е по-голямо от предишното
+			s = *iter;//Присвоява се името на фирмата
+		}
+	}
+	cout << s;//Извежда името на фирмата
+}
+void Cvqt_Marka_Probeg(string Cvqt_Marka_Probeg, vector<CAutopark>cars) //функция за търсено по цвят, марка и пробег над 150000
+{
+	for (vector<CAutopark>::iterator iter = cars.begin(); iter != cars.end(); iter++) // Вектора на автокъщите се обикаля
+	{
+		for (vector<CAuto>::const_iterator it = iter->getCars().begin(); it != iter->getCars().end(); it++)//Вектора с колите се обикаля
+		{
+			if (it->GetColor() == Cvqt_Marka_Probeg)//Ако има съвпадение в цвета
+			{
+				if ((it->GetBrand() == "RENAUT" || it->GetBrand() == "PEGAUT") && it->GetKm() > 150000)//Проверка дали марката и пробега отговарят на изискванията
+				{
+					cout << iter->getName();//Извежда се името на фирмата
+				}
+			}
+		}
+	}
+}
