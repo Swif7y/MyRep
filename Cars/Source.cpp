@@ -246,3 +246,30 @@ void Zapisvane(vector<CAutopark>cars)// Глобална функция за запис във текстов фа
 		os.close();//Затваряме файла
 	}
 }
+
+void More_Than_1_SALES(vector<CAutopark>cars) // функция за намиране на автокъщи с повече от 1 продажба
+{
+	for (int i = 0; i<cars.size(); i++)//Цикъл за преминаване през вектора
+	{
+		if (cars[i].getSells()>1)//Ако има повече от 1 продажба
+		{
+			cout << cars[i];//изписва името на фирмата
+		}
+	}
+}
+
+void Bez_LADA_DACIA(string marka1, string marka2, vector<CAutopark>cars)//функция за изписване на името на фирмите които нямат Лада и Дачии
+{
+	vector<CAutopark>::iterator iter1;
+	vector<CAuto>::const_iterator iter2;
+	for (vector<CAutopark>::iterator iter1 = cars.begin(); iter1 != cars.end(); iter1++)//Обикаля фирмите
+	{
+		for (iter2 = iter1->getCars().begin(); iter2 != iter1->getCars().end(); iter2++)//Обикаля колите
+		{
+			if (iter2->GetBrand() != marka1 && iter2->GetBrand() != marka2)//Ако няма Лади и Дачии
+			{
+				cout << iter1->getName() << endl;//Изписване на името на фирмата
+			}
+		}
+	}
+}
