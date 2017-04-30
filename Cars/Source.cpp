@@ -304,3 +304,61 @@ void Cvqt_Marka_Probeg(string Cvqt_Marka_Probeg, vector<CAutopark>cars) //функци
 		}
 	}
 }
+
+void main()
+{
+	fstream fp("autopark.txt");
+	CAutopark s;
+	vector<CAutopark>CAuto;
+	int n;
+	string clr;
+	while (fp >> s)
+	{
+		CAuto.push_back(s);
+	}
+	do
+	{
+
+		cout << "________________________________________________________________________________" << endl;
+		cout << "			1.Pokazvane na avtokushtite" << endl;
+		cout << "			2.Avtokushti s pove4e ot 1 prodajba" << endl;
+		cout << "			3.Vsi4ki osven LADA i DACIA            " << endl;
+		cout << "			4.Naj-mnogo prodajbi  " << endl;
+		cout << "			5.Tursene po cvqt(pejo i reno >150000     " << endl;
+		cout << "			6.Zapazvane na informaciqta vuv file    " << endl;
+		cout << "			7.Exit               " << endl;
+		do
+		{
+			cout << "			Vashiqt izbor: ";
+			cin >> n;
+			cout << endl;
+		} while (n>7);
+		switch (n)
+		{
+		case 1: for (int i = 0; i<CAuto.size(); i++)
+		{
+			CAuto[i].Output(cout);
+			cout << endl;
+		}
+				break;
+		case 2: More_Than_1_SALES(CAuto);
+			break;
+		case 3: Bez_LADA_DACIA("LADA", "DACIA", CAuto);
+			break;
+		case 4: Max_SALES(CAuto);
+			break;
+		case 5: cout << "Vuvedete turseniqt ot vas cvqt: ";
+			cin >> clr;
+			transform(clr.begin(), clr.end(), clr.begin(), ::toupper);
+			cout << endl;
+			Cvqt_Marka_Probeg(clr, CAuto);
+			cout << endl;
+			break;
+		case 6: Zapisvane(CAuto);
+			cout << "Zapazeno!" << endl << endl;
+			break;
+		case 7: exit(1);
+		}
+	} while (n<7);
+	system("pause");
+}
