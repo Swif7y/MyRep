@@ -232,3 +232,17 @@ public:
 	}
 
 };
+
+void Zapisvane(vector<CAutopark>cars)// Глобална функция за запис във текстов файл
+{
+	ofstream os;
+	for (int i = 0; i<cars.size(); i++)
+	{
+		char buffer[100] = { 0 };
+		string str = _itoa(i, buffer, 10);//Преобразование от тип int към тип string
+		string filename = "Avtokushti" + str;//Името на новия текстов файл(След всеки запис се създава нов файл)
+		os.open(filename + ".txt");//Отваряме текстовия файл
+		os << cars[i];//Запис на автокъщата
+		os.close();//Затваряме файла
+	}
+}

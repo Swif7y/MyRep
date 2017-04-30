@@ -1,0 +1,16 @@
+Ime: CARS
+Kompaniq: CARS_INC
+Broi Avtosaloni: 3
+Broi prodajbi: 4
+Kola: 
+Reg.Nom: CH1232AT Marka: OPEL Godina: 1992 Cvqt: SIN Probeg: 190000
+Kola: 
+Reg.Nom: CH3212AA Marka: SEAT Godina: 2001 Cvqt: BQL Probeg: 100000
+Kola: 
+Reg.Nom: DH4212NA Marka: AUDI Godina: 2001 Cvqt: ZELEN Probeg: 187921
+Kola: 
+Reg.Nom: AA3212AA Marka: FIAT Godina: 2012 Cvqt: CHEREN Probeg: 32190
+Kola: 
+Reg.Nom: PO2123TT Marka: RENAUT Godina: 2001 Cvqt: METALIC Probeg: 150001
+Kola: 
+Reg.Nom: PO2123TT Marka: PEGAUT Godina: 2005 Cvqt: ZELEN Probeg: 120000

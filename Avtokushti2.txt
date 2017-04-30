@@ -1,0 +1,16 @@
+Ime: UsedCars
+Kompaniq: Used_carsInc
+Broi Avtosaloni: 1
+Broi prodajbi: 1
+Kola: 
+Reg.Nom: CB5436AF Marka: RENAUT Godina: 2009 Cvqt: SIN Probeg: 100000
+Kola: 
+Reg.Nom: VR3125AA Marka: PEGAUT Godina: 2007 Cvqt: KAFQV Probeg: 160000
+Kola: 
+Reg.Nom: BT3125NA Marka: FERRARI Godina: 2016 Cvqt: CHERVEN Probeg: 10000
+Kola: 
+Reg.Nom: KE3312AA Marka: LAMBO Godina: 2012 Cvqt: PIMBQN Probeg: 32190
+Kola: 
+Reg.Nom: OB3161TT Marka: LADA Godina: 1991 Cvqt: METALIC Probeg: 150001
+Kola: 
+Reg.Nom: IY1111TT Marka: MERCEDES Godina: 1994 Cvqt: ZELEN Probeg: 10000

@@ -1,0 +1,16 @@
+Ime: BestCars
+Kompaniq: BEST_CARS_INC
+Broi Avtosaloni: 2
+Broi prodajbi: 6
+Kola: 
+Reg.Nom: BB3125AF Marka: Tesla Godina: 2015 Cvqt: METALIC Probeg: 0
+Kola: 
+Reg.Nom: AR3212AA Marka: LADA Godina: 2001 Cvqt: BQL Probeg: 100000
+Kola: 
+Reg.Nom: AT4212NA Marka: DACIA Godina: 1900 Cvqt: ZELEN Probeg: 187921
+Kola: 
+Reg.Nom: TE3212AA Marka: FIAT Godina: 2012 Cvqt: CHEREN Probeg: 32190
+Kola: 
+Reg.Nom: EB2123TT Marka: LADA Godina: 1991 Cvqt: METALIC Probeg: 150001
+Kola: 
+Reg.Nom: YY2123TT Marka: PEGAUT Godina: 1994 Cvqt: ZELEN Probeg: 200000
