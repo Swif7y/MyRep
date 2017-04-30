@@ -151,3 +151,84 @@ public:
 
 
 };
+
+class CAutopark
+{
+private:
+	string ak_ime;
+	string ak_Kompaniq;
+	int ak_avto_k;
+	int ak_prodajbi;
+	vector<CAuto>cars;
+public:
+	const string& getName()const
+	{
+		return ak_ime;
+	}
+	const int& getSells()const
+	{
+		return ak_prodajbi;
+	}
+	const vector<CAuto>& getCars()const
+	{
+		return cars;
+	}
+	CAutopark()// Подразбиращ конструктор
+	{
+	}
+	CAutopark(const string& name, const string& comp, const int& autosalons, const int& sells, vector<CAuto>&c)//Експлицитен конструктор
+	{
+		ak_ime = name;
+		ak_Kompaniq = comp;
+		ak_avto_k = autosalons;
+		ak_prodajbi = sells;
+		cars = c;
+	}
+
+	CAutopark(const CAutopark& c)//Копиращ конструктор
+	{
+		ak_ime = c.ak_ime;
+		ak_Kompaniq = c.ak_Kompaniq;
+		ak_avto_k = c.ak_avto_k;
+		ak_prodajbi = c.ak_prodajbi;
+		cars = c.cars;
+	}
+	void Output(ostream& toStream)// Функция за извеждане на информацията
+	{
+		toStream << "Ime: " << ak_ime << endl << "Kompaniq: " << ak_Kompaniq << endl << "Broi Avtosaloni: "
+			<< ak_avto_k << endl << "Broi prodajbi: " << ak_prodajbi << endl;
+		for (int i = 0; i <cars.size(); i++)
+		{
+			cars[i].print(toStream);
+		}
+	}
+	friend ostream& operator<<(ostream& toStream, CAutopark& c)// Оператор за извеждане
+	{
+		c.Output(toStream);
+		return toStream;
+	}
+	void CreateNew(CAutopark & c)//Функция за създавене на обект чрез друг обект
+	{
+		c.ak_ime = ak_ime;
+		c.ak_Kompaniq = ak_Kompaniq;
+		c.ak_avto_k = ak_avto_k;
+		c.ak_prodajbi = ak_prodajbi;
+		c.cars = cars;
+	}
+	friend istream& operator >> (istream& fromStream, CAutopark& c)//оператор за въвеждане
+	{
+		c.cars.clear();
+		CAuto a;
+		fromStream >> c.ak_ime;
+		fromStream >> c.ak_Kompaniq;
+		fromStream >> c.ak_avto_k;
+		fromStream >> c.ak_prodajbi;
+		for (int i = 0; i < 6; i++)
+		{
+			fromStream >> a;
+			c.cars.push_back(a);
+		}
+		return fromStream;
+	}
+
+};
