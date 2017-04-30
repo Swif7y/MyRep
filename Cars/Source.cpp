@@ -355,7 +355,7 @@ void main()
 			cout << endl;
 			break;
 		case 6: Zapisvane(CAuto);
-			cout << "Zapazeno!" << endl << endl;
+			cout << "Zapazeno! " << endl << endl;
 			break;
 		case 7: exit(1);
 		}
