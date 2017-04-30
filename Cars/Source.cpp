@@ -83,7 +83,29 @@ public:
 		toStream << "Cvqt: " << GetColor() << endl;
 		toStream << "Probeg: " << GetKm() << endl;
 	}
-
+	virtual bool comp(CAuto b)//Функция за сравняване на пробеците
+	{
+		if (probeg == b.probeg)
+		{
+			return true;
+		}
+		else return false;
+	}
+	static bool reg_num_validation(CAuto reg_num_validation)//Функция за валидация на регистрационен номер
+	{
+		while (reg_num_validation.GetRegN().length() != 8)
+		{
+			string s;
+			cout << "Nevaliden nomer! Napravete promqna: ";
+			cin >> s;
+			reg_num_validation.SetRegN(s);
+		}
+		return true;
+	}
+	static int carAge(CAuto age)//Функция за пресмятане на функцията на колата
+	{
+		return curYear - age.GetYear();
+	}
 	ostream& print(ostream& toStream)//Функция за извеждане в програмата
 	{
 		toStream << "Kola: " << endl;
